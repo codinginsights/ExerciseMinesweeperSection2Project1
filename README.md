@@ -18,37 +18,28 @@ This image helps in gaining a better understanding of what a ```Square``` repres
 
 Let's think in terms of the game once again. The functionality of any class is determined by asking relevant questions. Let's ask some questions:
 
- - (**developer**) What are the responsibilities of a backend Square ? What can we do with it ?
-  - (**customer**) We can uncover a Square, or we can mark it as a mine
- - (**developer**) Can we uncover the same Square twice ?
-  - (**customer**) No we cannot
- - (**developer**) By the way, what is the initial state of all the Squares ?
-  - (**customer**) Initially they are all covered
- - (**developer**) What happens if a user uncovers a Square which has been marked as a mine ?
-  - (**customer**) Umm, well a user should be able to uncover a Square which has been marked as a mine. This essentially means they realize, this Square may not be a mine, and now want to uncover it. However, I would prefer this to be a two step transition. So the user does some action, which changes the Square's state from marked to covered, and then they uncover the Square like they would uncover any other Square
- - (**developer**) Ok that sounds fair. By the way, should we follow the standard convention and use the left mouse click for uncovering a Square and the right mouse click for marking it as a mine ?
-  - (**customer**) Yeah,  that sounds great
- - (**developer**) Ok so a user will left click on a covered Square to uncover it, and right click on a covered Square to mark it as a mine. How does a user change the state of a marked Square to covered ?
-  - (**customer**) If a user marks (by right clicking) a Square that is already marked, then the state of the Square changes to covered
- - (**developer**) And do we need to allow the user to play the game without using a mouse ? Just with a keyboard ?
-  - (**customer**) Umm, no, not at the moment. We will do it later, if enough users ask for it
- - (**developer**) And I am assuming the game would end if a user uncovers a Square which is a mine ?
-  - (**customer**) Yes, that's correct
- - (**developer**) Alright, I think I understand what we need to do. I am sure we probably need to talk about a lot of other things like how many mines we need to have on the Board, what sort of information we need to show the user as they are playing the game, and several other things. But I suggest that we get started with the simplest thing that works, We would love the get your feedback on every iteration and proceed accordingly. If it's alright with you, I would like to make a small table which shows things a user can do with a Square on the Board and how the Square should react. It's just to make sure I understand what you want us to develop
-  - (**customer**) Sure that sounds like a great idea
+  - _**(developer)** What are the responsibilities of a backend Square ? What can we do with it ?_
+  - _**(customer)** We can uncover a Square, or we can mark it as a mine._
+  - _**(developer)** Can we uncover the same Square twice ?_
+  - _**(customer)** No we cannot._
+  - _**(developer)** By the way, what is the initial state of all the Squares ?_
+  - _**(customer)** Initially they are all covered._
+  - _**(developer)** What happens if a user uncovers a Square which has been marked as a mine ?_
+  - _**(customer)** Umm, well a user should be able to uncover a Square which has been marked as a mine. This essentially means they realize, this Square may not be a mine, and now want to uncover it. However, I would prefer this to be a two step transition. So the user does some action, which changes the Square's state from marked to covered, and then they uncover the Square like they would uncover any other Square._
+  - _**(developer)** Ok that sounds fair. By the way, should we follow the standard convention and use the left mouse click for uncovering a Square and the right mouse click for marking it as a mine ?_
+  - _**(customer)** Yeah,  that sounds great._
+  - _**(developer)** Ok so a user will left click on a covered Square to uncover it, and right click on a covered Square to mark it as a mine. How does a user change the state of a marked Square to covered ?_
+  - _**(customer)** If a user marks (by right clicking) a Square that is already marked, then the state of the Square changes to covered._
+  - _**(developer)** And do we need to allow the user to play the game without using a mouse ? Just with a keyboard ?_
+  - _**(customer)** Umm, no, not at the moment. We will do it later, if enough users ask for it._
+  - _**(developer)** And I am assuming the game would end if a user uncovers a Square which is a mine ?_
+  - _**(customer)** Yes, that's correct._
+  - _**(developer)** Alright, I think I understand what we need to do. I am sure we probably need to talk about a lot of other things like how many mines we need to have on the Board, what sort of information we need to show the user as they are playing the game, and several other things. But I suggest that we get started with the simplest thing that works, We would love the get your feedback on every iteration and proceed accordingly. If it's alright with you, I would like to make a small table which shows things a user can do with a Square on the Board and how the Square should react. It's just to make sure I understand what you want us to develop._
+  - _**(customer)** Sure that sounds like a great idea._
 
 The developer makes this table which shows the initial state of a Square on the x-axis and actions on the y-axis. The cells show the resulting state of a Square after an action has been performed.
 
-<pre>
-*******************************************************
-          |  Covered     | Uncovered    | Marked     |
-*******************************************************
-Uncover  |  Uncovered  | Uncovered    | Marked |
-*******************************************************
-Mark      |  Marked      | Uncovered    | Covered |
-*******************************************************
-
-</pre>
+![Minesweeper Game Image](https://raw.github.com/diycomputerscience/MinesweeperImages/master/images/SquareStateChanges.jpg)
 
 
 The customer is pretty happy with this table. It correctly reflects how a Square should behave when an some action is performed on it.
